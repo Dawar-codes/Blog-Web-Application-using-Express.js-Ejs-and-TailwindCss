@@ -1,0 +1,14 @@
+<%- include('partials/header.ejs') %>
+
+  <div class="flex flex-col">
+    <h1 class="text-2xl text-center mb-10 mt-5">Edit your post</h1>
+    <form action="/edit/<%= index%>?_method=PUT" method="POST">
+      <div class="flex flex-col gap-3 items-center justify-center">
+        <input name="name" type="text" value= "<%= post.title%>" class="w-1/2 h-10 border-gray-400 border-[1px] p-2 rounded-lg" placeholder="Title" />
+        <textarea name="text" class="w-1/2 h-44 border-gray-400 border-[1px] p-2 rounded-lg" placeholder="What you wanna say!!"><%= post.body %></textarea>
+        <input type="submit" value="UPDATE" class="bg-gray-800 border-black border-[1px] text-white font-semibold mb-10 px-4 py-2 rounded-md cursor-pointer transition duration-300 hover:text-orange-600"/>
+      </div>
+    </form>
+  </div>
+
+<%- include('partials/footer.ejs') %>
